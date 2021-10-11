@@ -111,6 +111,25 @@ window.addEventListener('load', (event) => {
 
     }
 
+    const restartButton = document.getElementsByClassName('btn')[0];
+    
+    restartButton.addEventListener("click",function(){
+        const squares = document.querySelectorAll('.square');
+
+        for (let i =0; i < squares.length; i++)
+        {
+            squares[i].classList.remove('X');
+            squares[i].classList.remove('O');
+            squares[i].innerHTML ='';
+
+        }
+
+        let status = document.getElementById('status');
+        status.innerHTML = 'Move your mouse over a square and click to play an X or an O.';
+        status.classList.remove("you-won");
+    
+    });
+
 
 
 
