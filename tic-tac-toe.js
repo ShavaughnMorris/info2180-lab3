@@ -1,7 +1,7 @@
 window.addEventListener('load', (event) => {
    
     const boardContainer =  document.getElementById('board');
-    const board = boardContainer.childNodes
+    const board = boardContainer.childNodes;
 
     console.log(board);
 
@@ -9,7 +9,60 @@ window.addEventListener('load', (event) => {
     {
         board[i].className = 'square';
     }
+
+
+    let turn =0;
+
+    function  addMarker(mark){
+        if (turn%2 == 0)
+        {
+            if(mark.target.textContent ==''){
+                mark.target.className += " X"
+                mark.target.textContent = "X"
+                turn++;
+
+            }
+        }
+        else
+        {
+            if(mark.target.textContent ==''){
+                mark.target.className += " O"
+                mark.target.textContent = "O"
+                turn++;
+
+            }
+        }
+    }
+
+
+
+    for (let i =1; i < board.length; i+=2)
+    {
+        board[i].addEventListener("click",function(mark){
+            if (turn%2 == 0)
+            {
+                if(mark.target.textContent ==''){
+                    mark.target.className += " X"
+                    mark.target.textContent = "X"
+                    turn++;
     
+                }
+            }
+            else
+            {
+                if(mark.target.textContent ==''){
+                    mark.target.className += " O"
+                    mark.target.textContent = "O"
+                    turn++;
+    
+                }
+            }
+        });
+    }
+
+
 
 });
+
+
   
