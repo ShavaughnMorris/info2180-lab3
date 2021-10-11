@@ -60,6 +60,17 @@ window.addEventListener('load', (event) => {
         });
     }
 
+    for (let i =0; i < board.length; i++)
+    {
+        board[i].addEventListener("mouseover",function(e){
+            board[i].className += " hover";
+        })
+
+        board[i].addEventListener("mouseout",function(e){
+            board[i].classList.remove("hover");
+        })
+
+    }
 
 
 });
